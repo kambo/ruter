@@ -56,8 +56,8 @@ const StopPlace = () => {
 	return (
 		<Query query={OPPSAL_QUERY} context={headers}>
 			{({loading, error, data}) => {
-				if (loading) return <p>Loading...</p>;
-				if (error) return <p>Error :(</p>;
+				if (loading) return <p>Laster...</p>;
+				if (error) return <p>Feil :(</p>;
 
 				return (
 					<div className="stop-place">
