@@ -4,10 +4,10 @@ import gql from 'graphql-tag';
 import { DateTime } from 'luxon';
 import shortId from 'shortid'
 import DepartureTime from './DepartureTime';
-import './StopPlace.css';
+import './Trip.css';
 
 
-const StopPlace = () => {
+const Trip = () => {
 	const time = DateTime.local().toString();
 
 	const OPPSAL_QUERY = gql`{
@@ -55,4 +55,4 @@ const StopPlace = () => {
 	)
 };
 
-export default StopPlace;
+export default Trip;
