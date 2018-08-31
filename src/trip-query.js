@@ -6,7 +6,13 @@ const tripQuery = (time, fromPlace, toPlace) => (gql`{
       name
     }
     tripPatterns {
-      startTime    
+      legs {      
+        fromEstimatedCall {
+          realtime
+          expectedArrivalTime
+          aimedArrivalTime
+        }
+      }    
     }
   }
 }

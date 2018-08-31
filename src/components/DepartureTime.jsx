@@ -2,19 +2,24 @@ import React from 'react';
 import { DateTime } from 'luxon';
 import './DepartureTime.css'
 
-const DepartureTime = ({dateTimeISOString}) => {
-	const dateTime = DateTime.fromISO(dateTimeISOString);
+const DepartureTime = ({fromEstimatedCall, minutes}) => {
+	const dateTime = DateTime.fromISO(fromEstimatedCall[0].expectedArrivalTime);
 
-	const timeToDeparture = () => {
+
+	const departureTime = () => {
 		if (dateTime.hasSame(DateTime.local(), 'minute')) {
-			return 'Nå'
+			return 'No'
 		}
-		return DateTime.fromISO(dateTime).toLocaleString(DateTime.TIME_SIMPLE)
+		return dateTime.toLocaleString(DateTime.TIME_SIMPLE);
 	};
+
+	const minutesToDeparture = () => dateTime.diff(DateTime.local(), 'minutes').toFormat('m');
+
+
 
 	return (
 		<li className='departure-time'>
-			{timeToDeparture()}
+			{minutes ? `${minutesToDeparture()} min` : departureTime()}
 		</li>)
 };
 

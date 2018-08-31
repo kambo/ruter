@@ -1,3 +1,5 @@
 .App {
   text-align: center;
+	grid-template-rows: 1fr 1fr auto;
+	grid-template-columns: 100%;
 }

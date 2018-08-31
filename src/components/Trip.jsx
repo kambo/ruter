@@ -5,7 +5,7 @@ import DepartureTime from './DepartureTime';
 import './Trip.css';
 
 
-const Trip = ({query, time}) => {
+const Trip = ({query, time, minutes}) => {
 	const headers = {
 		headers: {
 			'ET-Client-Name': 'demo-app',
@@ -24,9 +24,9 @@ const Trip = ({query, time}) => {
 						<h1>{data.trip.fromPlace.name}</h1>
 						<ul>
 							{
-								data.trip.tripPatterns.map(call => (
-								<DepartureTime key={shortId.generate()} dateTimeISOString={call.startTime} />
-							)).reverse()
+								data.trip.tripPatterns.map(trip => (
+								<DepartureTime key={shortId.generate()} fromEstimatedCall={trip.legs.map(leg => leg.fromEstimatedCall)} minutes={minutes} />
+							))
 							}
 
 						</ul>

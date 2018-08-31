@@ -7,9 +7,9 @@ import { Settings } from 'luxon';
 
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { unregister} from './registerServiceWorker';
 
-Settings.defaultLocale = 'nb';
+Settings.defaultLocale = 'nn';
 
 
 const httpLink = createHttpLink({uri: "https://api.entur.org/journeyplanner/2.0/index/graphql"});
@@ -26,4 +26,4 @@ ReactDOM.render(
 	</ApolloProvider>
 	, document.getElementById('root'),
 );
-registerServiceWorker();
+unregister();
