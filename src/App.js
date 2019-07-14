@@ -22,6 +22,8 @@ class App extends Component {
 	}
 
 	render() {
+
+		console.log(tripQuery(this.time, "NSR:StopPlace:5994", "NSR:StopPlace:58366"));
 		return (
 			<div className="App">
 				<Trip query={tripQuery(this.time, "NSR:StopPlace:5994", "NSR:StopPlace:58366")} minutes={this.state.minutes}/>

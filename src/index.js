@@ -12,10 +12,10 @@ import { unregister} from './registerServiceWorker';
 Settings.defaultLocale = 'nn';
 
 
-const httpLink = createHttpLink({uri: "https://api.entur.org/journeyplanner/2.0/index/graphql"});
+const httpLink = createHttpLink({uri: "https://api.entur.io/journey-planner/v2/graphql"});
 
 const client = new ApolloClient({
-	uri: "https://api.entur.org/journeyplanner/2.0/index/graphql",
+	uri: "https://api.entur.io/journey-planner/v2/graphql",
 	link: httpLink,
 });
 
